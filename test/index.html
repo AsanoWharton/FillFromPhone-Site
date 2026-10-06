@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A local-only example page for testing the Fill from Phone Chrome extension.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Test the extension · Fill from Phone</title>
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/header.css">
+  <link rel="stylesheet" href="/assets/test.css">
+  <script type="module" src="/assets/test.js"></script>
+</head>
+<body>
+  <header class="site-header"><a class="site-wordmark" href="/" aria-label="Fill from Phone home">Fill from Phone</a><details class="site-menu"><summary><span>Menu</span><span class="menu-icon" aria-hidden="true"></span></summary><nav aria-label="Primary"><a href="/">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a></nav></details></header>
+  <main class="page-shell">
+    <section class="login-card" aria-labelledby="title">
+      <div class="card-heading">
+        <img src="/favicon.png" width="48" height="48" alt="">
+        <div><p class="eyebrow">Extension test</p><h1 id="title">Test Fill from Phone</h1></div>
+      </div>
+      <p class="extension-status" id="extension-status" role="status" aria-live="polite" data-state="checking"><span aria-hidden="true"></span><strong>Checking for the extension…</strong></p>
+      <aside class="install-panel" id="extension-install" aria-labelledby="install-title" hidden>
+        <p class="availability-badge"><span aria-hidden="true"></span>Chrome Web Store · Coming soon</p>
+        <h2 id="install-title">Install Fill from Phone to use this page.</h2>
+        <p>Download the current Chrome release from GitHub, then reload this page after installation.</p>
+        <a class="download-link" href="https://github.com/AsanoWharton/FillFromPhone-Extension/releases/latest/download/fill-from-phone-0.6.2-chrome-web-store.zip">Download current release</a>
+        <a class="notes-link" href="https://github.com/AsanoWharton/FillFromPhone-Extension/releases/latest">Release notes</a>
+      </aside>
+      <p class="intro">Choose a field below to verify how the extension identifies and presents each field type.</p>
+      <ol class="quick-steps" aria-label="How to test">
+        <li><span>1</span>Right-click a field</li>
+        <li><span>2</span>Choose Fill from Phone</li>
+        <li><span>3</span>Scan and send</li>
+      </ol>
+      <div class="test-fields">
+        <div class="field-group">
+          <div class="field-heading"><label for="example-short">Email or username</label><details class="field-tip" name="field-help"><summary aria-label="How to test the short text field">?</summary><div class="tooltip" role="note"><strong>Short text</strong><span>The phone should show a single-line text box.</span></div></details></div>
+          <input id="example-short" type="text" autocomplete="off" placeholder="Right-click to test short text">
+        </div>
+        <div class="field-group">
+          <div class="field-heading"><label for="example-password">Password</label><details class="field-tip" name="field-help"><summary aria-label="How to test the password field">?</summary><div class="tooltip" role="note"><strong>Password</strong><span>The phone should show a masked password box with its own reveal control.</span></div></details></div>
+          <div class="password-control">
+            <input id="example-password" type="password" autocomplete="new-password" placeholder="Right-click to test a password" aria-describedby="password-example-guidance">
+            <button class="visibility" id="password-visibility" type="button" aria-label="Show password" aria-controls="example-password" aria-pressed="false">
+              <img id="password-visibility-show-icon" src="/assets/eye.svg" alt="" aria-hidden="true">
+              <img id="password-visibility-hide-icon" src="/assets/eye-slash.svg" alt="" aria-hidden="true" hidden>
+              <span id="password-visibility-label">Show</span>
+            </button>
+          </div>
+          <p class="field-guidance" id="password-example-guidance">Re-masks after 10 seconds or when this page loses focus.</p>
+        </div>
+        <div class="field-group">
+          <div class="field-heading"><label for="example-long">Notes or recovery text</label><details class="field-tip" name="field-help"><summary aria-label="How to test the long text field">?</summary><div class="tooltip" role="note"><strong>Long text</strong><span>The phone should show a multi-line text area.</span></div></details></div>
+          <textarea id="example-long" rows="3" autocomplete="off" placeholder="Right-click to test long text"></textarea>
+        </div>
+      </div>
+      <p class="safety-note"><strong>No sign-in occurs.</strong> This page has no form or submit action. Use synthetic values only.</p>
+    </section>
+  </main>
+  <footer>Nothing is submitted · No analytics · No external resources</footer>
+</body>
+</html>

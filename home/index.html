@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Keep the keyring on your phone. Send one encrypted value to one selected Chrome field without synchronizing the rest of your vault.">
+  <title>Fill from Phone · Extend one key, not the keyring</title>
+  <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/header.css">
+  <link rel="stylesheet" href="/assets/home.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-wordmark" href="/" aria-label="Fill from Phone home">Fill from Phone</a>
+    <details class="site-menu"><summary><span>Menu</span><span class="menu-icon" aria-hidden="true"></span></summary><nav aria-label="Primary"><a aria-current="page" href="/">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a></nav></details>
+  </header>
+  <main>
+    <section class="hero marketing-hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A secure bridge from vault to field</p>
+        <h1 id="hero-title">Extend one key, not the keyring.</h1>
+        <p class="lede">Why copy an entire password vault to every computer just to use one credential? Passkeys are improving that model, but passwords, usernames, and recovery codes remain. Fill from Phone keeps the keyring on your phone and sends only the value you choose.</p>
+        <div class="actions"><a class="primary" href="#get-extension">Get the extension</a><a class="secondary" href="#how-it-works">See how it works</a></div>
+      </div>
+      <figure class="hero-visual">
+        <img src="/assets/transfer-hero.png?v=48fb6005" width="1536" height="1024" alt="A phone scans a QR code beside a selected field on a laptop, then sends the value into that field." fetchpriority="high" decoding="async">
+      </figure>
+    </section>
+
+    <section class="release-bar" id="get-extension" aria-labelledby="release-title">
+      <div>
+        <p class="availability-badge"><span aria-hidden="true"></span>Chrome Web Store · Coming soon</p>
+        <h2 id="release-title">The current Chrome release is available on GitHub.</h2>
+        <p>Download version 0.6.2 for Chrome 120 or newer, or review the source and release notes before installing.</p>
+      </div>
+      <div class="release-actions"><a class="primary" href="https://github.com/AsanoWharton/FillFromPhone-Extension/releases/latest/download/fill-from-phone-0.6.2-chrome-web-store.zip">Download current release</a><a class="secondary" href="https://github.com/AsanoWharton/FillFromPhone-Extension/releases/latest">Release notes</a></div>
+    </section>
+
+    <ul class="benefit-strip" aria-label="Product characteristics">
+      <li><strong>The vault stays put</strong><span>Move one value, not the password database.</span></li>
+      <li><strong>No bridge account</strong><span>No new identity, profile, or synchronized store.</span></li>
+      <li><strong>One chosen field</strong><span>No clipboard access and no automatic form submission.</span></li>
+      <li><strong>One-time path</strong><span>Each route expires after two minutes and works once.</span></li>
+    </ul>
+
+    <section class="section product-story" id="how-it-works" aria-labelledby="how-title">
+      <div class="story-intro"><p class="section-label">How it works</p><h2 id="how-title">One credential crosses. Your vault does not.</h2><p>The desktop asks for one value. Your phone supplies only that value through a fresh encrypted path.</p></div>
+      <div class="walkthrough">
+        <article class="interaction-card">
+          <div class="interaction-image choose-image"><img src="/assets/transfer-hero.png?v=48fb6005" width="1536" height="1024" alt="A complete laptop with a selected browser field beside a one-time QR code and phone." loading="eager" decoding="async"></div>
+          <div class="interaction-copy"><span class="step-number">1</span><div><h3>Choose the field</h3><p>Right-click the exact password or editable field that needs the value.</p></div></div>
+        </article>
+        <article class="interaction-card">
+          <div class="interaction-image phone-image"><img src="/assets/scan-and-send.png?v=854efa74" width="1222" height="1287" alt="A phone scans the one-time QR code and sends a value to the selected browser field." loading="lazy" decoding="async"></div>
+          <div class="interaction-copy dual-step"><span class="step-number">2</span><div><h3>Scan</h3><p>Your phone opens a short-lived encrypted path bound to that field.</p></div><span class="step-number">3</span><div><h3>Send one value</h3><p>Bring it from your phone's password manager. The desktop receives only what you send.</p></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section use-cases" aria-labelledby="use-title">
+      <div><p class="section-label">The gap between passwords and passkeys</p><h2 id="use-title">Passkeys are the direction. Password fields are still everywhere.</h2></div>
+      <div><p class="use-case-copy">Fill from Phone covers the awkward middle: a strong credential is already protected on the phone, but the computer still needs it and does not need the entire vault.</p><div class="use-case-list"><span>Computers without the vault</span><span>Sites without passkeys</span><span>Long generated passwords</span><span>Temporary browser sessions</span><span>Cross-platform sign-ins</span></div></div>
+    </section>
+
+    <section class="section partner-panel" aria-labelledby="partner-title">
+      <div><p class="section-label">For password-manager teams</p><h2 id="partner-title">A secure handoff primitive—not another password manager.</h2></div>
+      <div><p>The reference extension proves a narrow phone-to-field interaction. The underlying protocol can fit inside an existing trusted mobile client and signed browser extension, extending a vault's reach without cloning the vault onto another endpoint.</p><p>One requested field. One authorized value. One consumable delivery. The proprietary technology is available for confidential technical diligence, commercial integration, and licensing.</p><p class="text-links"><a href="/support#security">Review the security model and cryptography</a></p></div>
+    </section>
+
+    <section class="section privacy-panel" aria-labelledby="privacy-title">
+      <div><p class="section-label">Private by design</p><h2 id="privacy-title">The relay moves the envelope. It cannot read the message.</h2><p>Your phone encrypts the value for the browser extension. The service holds only the opaque envelope long enough to deliver it once, and the extension never submits the form for you.</p><p class="text-links"><a href="/support#process">See the full transfer process</a><a href="/privacy">Read the privacy policy</a></p></div>
+      <dl class="simple-facts"><div><dt>2 minutes</dt><dd>maximum route lifetime</dd></div><div><dt>1 scan</dt><dd>first phone claims the transfer</dd></div><div><dt>1 delivery</dt><dd>the encrypted envelope is consumed once</dd></div></dl>
+    </section>
+
+    <section class="closing-cta" aria-labelledby="cta-title">
+      <p class="availability-badge centered"><span aria-hidden="true"></span>Chrome Web Store · Coming soon</p>
+      <h2 id="cta-title">Keep the vault on your phone.</h2>
+      <a class="primary" href="https://github.com/AsanoWharton/FillFromPhone-Extension/releases/latest">View the current release on GitHub</a>
+    </section>
+  </main>
+  <footer><span>Fill from Phone · Proprietary technology · Commercial licensing available</span><span><a href="mailto:contact@asanowharton.com">Contact</a> · <a href="/support">Support</a> · <a href="/privacy">Privacy</a> · No analytics</span></footer>
+</body>
+</html>
