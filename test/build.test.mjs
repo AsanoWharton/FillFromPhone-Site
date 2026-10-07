@@ -59,6 +59,10 @@ test("home and missing-extension states point to the current GitHub release", as
   const download = /https:\/\/github\.com\/AsanoWharton\/FillFromPhone-Extension\/releases\/latest\/download\/fill-from-phone-0\.6\.2-chrome-web-store\.zip/u;
   assert.match(home, /Extend one key, not the keyring\./u);
   assert.match(home, /Chrome Web Store · Coming soon/u);
+  assert.match(home, /Choose\. Scan\. Send\./u);
+  assert.equal((home.match(/\/assets\/transfer-hero\.png\?v=48fb6005/gu) ?? []).length, 1);
+  assert.equal((home.match(/class="availability-badge"/gu) ?? []).length, 1);
+  assert.doesNotMatch(home, /benefit-strip|closing-cta/u);
   assert.match(home, download);
   assert.match(example, /id="extension-install"[^>]+hidden/u);
   assert.match(example, download);

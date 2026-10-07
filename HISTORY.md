@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.20 — 2026-10-07
+
+- Removed the repeated benefit strip, duplicated walkthrough artwork, and second release call to action.
+- Reduced the homepage walkthrough to one three-step explanation and one supporting image.
+
 ## 0.9.19 — 2026-10-07
 
 - Kept Sora and Space Grotesk while restoring Fill from Phone's green interface palette.
