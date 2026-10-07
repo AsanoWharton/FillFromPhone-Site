@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.23 — 2026-10-07
+
+- Made every direct extension download label explicitly identify the file as a ZIP.
+- Preserved the existing reviewed archives and their download URLs.
+
 ## 0.9.22 — 2026-10-07
 
 - Added one concise closing call to action after the security section on mobile and desktop.
