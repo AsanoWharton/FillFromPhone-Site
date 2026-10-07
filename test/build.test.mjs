@@ -42,6 +42,8 @@ test("field help is exclusive and light-dismissable", async () => {
   assert.match(script, /pointerdown/u);
   assert.match(script, /focusin/u);
   assert.match(script, /Escape/u);
+  assert.match(example, /\/assets\/eye\.svg\?v=003c71/u);
+  assert.match(example, /\/assets\/eye-slash\.svg\?v=003c71/u);
 });
 
 test("test steps reserve room for their labels before wrapping", async () => {
