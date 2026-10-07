@@ -15,6 +15,8 @@ npm run check
 
 The static output is written to `dist/`. All scripts, fonts, icons, and images are served locally; the pages contain no analytics or remote code.
 
+This repository is a reduced public export. The private canonical repository and its tagged audit evidence are authoritative for release identity and deployment.
+
 ## Repository status
 
 The source is publicly reviewable but proprietary. Public access does not grant permission to copy, modify, redistribute, sublicense, create derivative works, or use the product commercially. See `PROPRIETARY-NOTICE.md`.
