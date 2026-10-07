@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.25 — 2026-10-07
+
+- Added compact ZIP file-type badges to each extension download action.
+- Preserved explicit accessible names and the existing reviewed ZIP URLs.
+
 ## 0.9.23 — 2026-10-07
 
 - Made every direct extension download label explicitly identify the file as a ZIP.

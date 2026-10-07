@@ -64,7 +64,8 @@ test("home and missing-extension states point to the current GitHub release", as
   assert.equal((home.match(/class="availability-badge"/gu) ?? []).length, 1);
   assert.equal((home.match(/class="closing-cta"/gu) ?? []).length, 1);
   assert.match(home, /Keep the vault on your phone\./u);
-  assert.equal((home.match(/>Download Chrome ZIP<\/a>/gu) ?? []).length, 2);
+  assert.equal((home.match(/>Download Chrome <span class="file-badge" aria-hidden="true">ZIP<\/span><span class="visually-hidden"> ZIP file<\/span><\/a>/gu) ?? []).length, 2);
+  assert.match(example, /Download Chrome <span class="file-badge" aria-hidden="true">ZIP<\/span><span class="visually-hidden"> ZIP file<\/span>/u);
   assert.doesNotMatch(home, /benefit-strip/u);
   assert.match(home, download);
   assert.match(example, /id="extension-install"[^>]+hidden/u);

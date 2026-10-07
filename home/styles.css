@@ -42,6 +42,9 @@ h1, h2 { font-family: "Sora", "Space Grotesk", sans-serif; font-size-adjust: fro
 .hero-visual img { display: block; width: 100%; height: auto; object-fit: contain; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
 .actions a, .release-actions a, .closing-actions a { display: inline-block; min-height: 2.8rem; padding: .72rem 1.05rem; border: 2px solid var(--accent); border-radius: .35rem; text-decoration: none; font-weight: 700; }
+.download-action { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; }
+.file-badge { padding: .14rem .42rem; border: 1px solid rgb(255 255 255 / 65%); border-radius: 999px; background: rgb(255 255 255 / 14%); font-size: .66rem; letter-spacing: .04em; line-height: 1.2; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; overflow: hidden !important; border: 0 !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
 .primary { background: var(--accent); color: var(--white); }
 .primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
 .secondary { color: var(--accent-dark); background: transparent; }

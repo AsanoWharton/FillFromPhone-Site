@@ -27,8 +27,10 @@ h1 { margin: 0; font-family: "Sora", "Space Grotesk", sans-serif; font-size: cla
 .availability-badge { display: inline-flex; align-items: center; gap: .4rem; width: fit-content; margin: 0; padding: .25rem .5rem; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-light); color: var(--accent-dark); font-size: .68rem; font-weight: 700; line-height: 1.2; }
 .availability-badge span { width: .45rem; height: .45rem; border-radius: 50%; background: var(--accent); }
 .download-link, .notes-link { display: inline-block; min-height: 2.5rem; padding: .62rem .75rem; border: 2px solid var(--accent); border-radius: .35rem; text-decoration: none; font-size: .78rem; font-weight: 700; }
-.download-link { background: var(--accent); color: #fff; }
+.download-link { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; background: var(--accent); color: #fff; }
 .download-link:hover { border-color: var(--accent-dark); background: var(--accent-dark); }
+.file-badge { padding: .12rem .38rem; border: 1px solid rgb(255 255 255 / 65%); border-radius: 999px; background: rgb(255 255 255 / 14%); font-size: .62rem; letter-spacing: .04em; line-height: 1.2; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; overflow: hidden !important; border: 0 !important; clip-path: inset(50%) !important; white-space: nowrap !important; }
 .notes-link { margin-left: .35rem; background: transparent; color: var(--accent-dark); }
 .notes-link:hover { background: var(--accent-light); }
 .quick-steps { display: grid; grid-template-columns: repeat(3, auto); gap: .4rem; margin: 0 0 1.25rem; padding: 0; list-style: none; }
