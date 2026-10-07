@@ -108,8 +108,9 @@ h1, h2 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; }
 .boundary { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: clamp(2rem, 7vw, 6rem); }
 .boundary .section-label { grid-column: 1 / -1; }
 code { padding: .1em .3em; border-radius: .15rem; background: var(--surface); font-size: .9em; }
-footer { display: flex; justify-content: space-between; gap: 1rem 2rem; padding: 2rem 0 3rem; color: var(--muted); font-size: .82rem; }
-footer p { margin: 0; }
+footer { display: grid; justify-items: center; gap: .65rem; padding: 2rem 0 3rem; color: var(--muted); font-size: .82rem; text-align: center; }
+.footer-copy { display: flex; flex-wrap: wrap; justify-content: center; gap: .15rem .4rem; margin: 0; text-wrap: balance; }
+.footer-copy span { white-space: nowrap; }
 footer nav { display: flex; flex: 0 0 auto; gap: 1rem; }
 .document { max-width: 70rem; }
 .document-header { max-width: 55rem; padding: clamp(3.5rem, 8vw, 7rem) 0 3rem; }
@@ -167,8 +168,8 @@ tbody tr:nth-child(even) { background: var(--surface); }
   .steps li { margin-top: 1rem; }
   .facts { margin-top: 2rem; }
   .support-steps { grid-template-columns: 1fr; }
-  footer { display: block; text-align: center; }
-  footer nav { justify-content: center; margin-top: .5rem; }
+  .footer-copy { display: grid; gap: .1rem; }
+  footer nav { justify-content: center; }
   .table-wrap { margin-inline: -1rem; padding-inline: 1rem; }
 }
 
