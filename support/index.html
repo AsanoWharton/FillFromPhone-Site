@@ -16,9 +16,10 @@
         <li><strong>Scan once.</strong><span>Open the one-time QR with your phone camera.</span></li>
         <li><strong>Send one value.</strong><span>Enter or paste it on the phone, send it, then review the filled field.</span></li>
       </ol>
-      <p class="support-note">No account or phone app is required. The extension does not use the clipboard or submit the destination form. To verify the three field modes, use the <a href="/test">extension test page</a> with synthetic values.</p>
+      <p class="support-note">No account or phone app is required. The extension does not use the clipboard or submit the destination form. Without the extension, use <a href="/receive">secure web copy and paste</a>; it decrypts locally, then you copy the value into the destination yourself.</p>
       <div class="faq-list">
         <details name="support-faq"><summary>What can I transfer?</summary><div class="faq-answer"><p>One short-text, long-text, or password value. Supported targets include text, email, password, search, telephone, URL, textarea, and editable-content fields. The phone presents the matching input type, including a masked password control.</p></div></details>
+        <details name="support-faq"><summary>How does web copy and paste differ from the extension?</summary><div class="faq-answer"><p>The <a href="/receive">web receiver</a> uses the same one-time encrypted handoff, but browser isolation prevents it from filling a field on another website. It reveals nothing by default. You explicitly copy the received value, its mutable application buffer is immediately overwritten, and you paste it into the destination.</p><p>The browser and operating system control the clipboard, so Fill from Phone cannot prove or force clipboard erasure. Use the extension when avoiding the clipboard is more important.</p></div></details>
       </div>
     </section>
 

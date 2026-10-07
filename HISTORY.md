@@ -1,5 +1,11 @@
 # Public history
 
+## 0.10.1 — 2026-10-07
+
+- Synchronized the reviewed Home, Support, and Privacy pages with the 0.10.1 product release.
+- Consolidated technical guidance under Support and retained the four-page public information architecture.
+- Removed retired legal-status wording; proprietary review and written commercial licensing terms remain.
+
 ## 0.9.25 — 2026-10-07
 
 - Added compact ZIP file-type badges to each extension download action.

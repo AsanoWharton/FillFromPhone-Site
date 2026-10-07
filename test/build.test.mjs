@@ -83,8 +83,8 @@ test("support consolidates process, security, cryptography, limits, and notices"
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
   assert.match(support, /<title>Support and technical FAQ · Fill from Phone<\/title>/u);
   assert.match(support, /mailto:contact@asanowharton\.com/u);
-  assert.equal((support.match(/<details name="support-faq">/gu) ?? []).length, 9);
-  assert.equal((support.match(/<details name="support-faq"><summary>/gu) ?? []).length, 9);
+  assert.equal((support.match(/<details name="support-faq">/gu) ?? []).length, 10);
+  assert.equal((support.match(/<details name="support-faq"><summary>/gu) ?? []).length, 10);
   for (const anchor of ["using", "troubleshooting", "process", "security", "cryptography", "limitations", "notices", "contact"]) {
     assert.match(support, new RegExp(`id="${anchor}"`, "u"));
   }
