@@ -3,7 +3,7 @@
 @font-face { font-family: "Space Grotesk"; src: url("/assets/space-grotesk-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Sora"; src: url("/assets/sora-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
-:root { color-scheme: light; --ink: #0b1f33; --muted: #4c5f70; --accent: #003c71; --accent-dark: #002a52; --accent-light: #e6eff6; --gray: #f0f4f8; --line: #768b9c; --focus: #9a5b00; font-family: "Space Grotesk", "Segoe UI", sans-serif; font-size-adjust: from-font; background: var(--gray); color: var(--ink); line-height: 1.45; font-synthesis: none; }
+:root { color-scheme: light; --ink: #222522; --muted: #5c635e; --accent: #146c68; --accent-dark: #0d514e; --accent-light: #deeeea; --gray: #f2efe8; --line: #7a827c; --focus: #9a5b00; font-family: "Space Grotesk", "Segoe UI", sans-serif; font-size-adjust: from-font; background: var(--gray); color: var(--ink); line-height: 1.45; font-synthesis: none; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 body { min-height: 100dvh; margin: 0; display: grid; grid-template-rows: auto 1fr auto; }
@@ -17,14 +17,14 @@ h1 { margin: 0; font-family: "Sora", "Space Grotesk", sans-serif; font-size: cla
 .intro { margin: 1rem 0; color: var(--muted); }
 .extension-status { display: flex; align-items: center; gap: .55rem; margin: 1rem 0 0; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: .35rem; background: var(--gray); color: var(--muted); font-size: .76rem; }
 .extension-status span { width: .65rem; height: .65rem; flex: 0 0 auto; border-radius: 50%; background: #777; }
-.extension-status[data-state="installed"] { border-color: #7295b4; background: var(--accent-light); color: var(--accent-dark); }
+.extension-status[data-state="installed"] { border-color: var(--line); background: var(--accent-light); color: var(--accent-dark); }
 .extension-status[data-state="installed"] span { background: var(--accent); }
 .extension-status[data-state="missing"] { border-color: #c88772; background: #fff1ec; color: #733722; }
 .extension-status[data-state="missing"] span { background: #b64b2a; }
 .install-panel { margin: .7rem 0 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: .55rem; background: #fff; }
 .install-panel h2 { margin: .55rem 0 .35rem; font-family: "Sora", "Space Grotesk", sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
 .install-panel > p:not(.availability-badge) { margin: 0 0 .85rem; color: var(--muted); font-size: .8rem; }
-.availability-badge { display: inline-flex; align-items: center; gap: .4rem; width: fit-content; margin: 0; padding: .25rem .5rem; border: 1px solid #7295b4; border-radius: 999px; background: var(--accent-light); color: var(--accent-dark); font-size: .68rem; font-weight: 700; line-height: 1.2; }
+.availability-badge { display: inline-flex; align-items: center; gap: .4rem; width: fit-content; margin: 0; padding: .25rem .5rem; border: 1px solid var(--line); border-radius: 999px; background: var(--accent-light); color: var(--accent-dark); font-size: .68rem; font-weight: 700; line-height: 1.2; }
 .availability-badge span { width: .45rem; height: .45rem; border-radius: 50%; background: var(--accent); }
 .download-link, .notes-link { display: inline-block; min-height: 2.5rem; padding: .62rem .75rem; border: 2px solid var(--accent); border-radius: .35rem; text-decoration: none; font-size: .78rem; font-weight: 700; }
 .download-link { background: var(--accent); color: #fff; }
@@ -38,14 +38,14 @@ h1 { margin: 0; font-family: "Sora", "Space Grotesk", sans-serif; font-size: cla
 .field-group { min-width: 0; }
 .field-heading { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-bottom: .35rem; }
 .field-heading label { font-size: .84rem; font-weight: 700; }
-input, textarea { display: block; width: 100%; border: 1px solid #546879; border-radius: .35rem; padding: .72rem .78rem; background: #fff; color: var(--ink); font-size: .95rem; }
+input, textarea { display: block; width: 100%; border: 1px solid var(--line); border-radius: .35rem; padding: .72rem .78rem; background: #fff; color: var(--ink); font-size: .95rem; }
 textarea { min-height: 5.5rem; resize: vertical; }
 input:focus, textarea:focus, button:focus-visible, summary:focus-visible { outline: 4px solid var(--focus); outline-offset: 2px; }
-.password-control { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; overflow: hidden; border: 1px solid #546879; border-radius: .35rem; background: #fff; }
+.password-control { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; overflow: hidden; border: 1px solid var(--line); border-radius: .35rem; background: #fff; }
 .password-control:focus-within { outline: 4px solid var(--focus); outline-offset: 2px; }
 .password-control input { min-width: 0; border: 0; border-radius: 0; }
 .password-control input:focus { outline: none; }
-.visibility { display: flex; min-width: 5.2rem; align-items: center; justify-content: center; gap: .45rem; padding: .35rem .7rem; border: 0; border-left: 1px solid var(--line); background: #f0f4f8; color: var(--accent-dark); font-size: .8rem; font-weight: 700; cursor: pointer; }
+.visibility { display: flex; min-width: 5.2rem; align-items: center; justify-content: center; gap: .45rem; padding: .35rem .7rem; border: 0; border-left: 1px solid var(--line); background: #f7f6f2; color: var(--accent-dark); font-size: .8rem; font-weight: 700; cursor: pointer; }
 .visibility:hover { background: var(--accent-light); color: var(--ink); }
 .visibility img { width: 1.05rem; height: 1.05rem; }
 .visibility img[hidden] { display: none; }

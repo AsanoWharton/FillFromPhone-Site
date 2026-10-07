@@ -42,8 +42,8 @@ test("field help is exclusive and light-dismissable", async () => {
   assert.match(script, /pointerdown/u);
   assert.match(script, /focusin/u);
   assert.match(script, /Escape/u);
-  assert.match(example, /\/assets\/eye\.svg\?v=003c71/u);
-  assert.match(example, /\/assets\/eye-slash\.svg\?v=003c71/u);
+  assert.match(example, /\/assets\/eye\.svg\?v=0d514e/u);
+  assert.match(example, /\/assets\/eye-slash\.svg\?v=0d514e/u);
 });
 
 test("test steps reserve room for their labels before wrapping", async () => {
@@ -112,10 +112,10 @@ test("support is presented as a regular navigation link", async () => {
   assert.match(styles, /\.site-wordmark:focus-visible, \.site-support:focus-visible \{[^}]*outline: 4px solid var\(--focus\)/u);
 });
 
-test("site follows the Asano Wharton typography and navy palette", async () => {
+test("site uses Asano Wharton typography with the Fill from Phone green palette", async () => {
   const styles = await readFile(new URL("../dist/assets/home.css", import.meta.url), "utf8");
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
-  assert.match(styles, /--accent: #003c71/u);
+  assert.match(styles, /--accent: #146c68/u);
   assert.match(styles, /font-family: "Space Grotesk", "Segoe UI", sans-serif/u);
   assert.match(styles, /h1, h2 \{[^}]*font-family: "Sora", "Space Grotesk", sans-serif/u);
   assert.match(support, /Space Grotesk and Sora/u);
