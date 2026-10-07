@@ -11,6 +11,10 @@ test("static build contains every public page and required local asset", async (
     "../dist/assets/header.css",
     "../dist/assets/home.css",
     "../dist/assets/test.js",
+    "../dist/assets/space-grotesk-400.woff2",
+    "../dist/assets/space-grotesk-500.woff2",
+    "../dist/assets/space-grotesk-700.woff2",
+    "../dist/assets/sora-700.woff2",
     "../dist/favicon.png"
   ];
   await Promise.all(paths.map((path) => access(new URL(path, import.meta.url))));
@@ -99,11 +103,21 @@ test("site chrome keeps only the wordmark, support, privacy, and terms", async (
 
 test("support is presented as a regular navigation link", async () => {
   const styles = await readFile(new URL("../dist/assets/header.css", import.meta.url), "utf8");
-  assert.match(styles, /\.site-wordmark \{[^}]*font-family: "Public Sans", system-ui,[^}]*font-size-adjust: from-font/u);
+  assert.match(styles, /\.site-wordmark \{[^}]*font-family: "Sora", "Space Grotesk", sans-serif;[^}]*font-size-adjust: from-font/u);
   const supportRule = styles.match(/\.site-support \{([^}]*)\}/u)?.[1] ?? "";
   assert.doesNotMatch(supportRule, /border|background|min-height/u);
   assert.match(styles, /\.site-support:hover, \.site-support\[aria-current="page"\] \{[^}]*text-decoration: underline/u);
   assert.match(styles, /\.site-wordmark:focus-visible, \.site-support:focus-visible \{[^}]*outline: 4px solid var\(--focus\)/u);
+});
+
+test("site follows the Asano Wharton typography and navy palette", async () => {
+  const styles = await readFile(new URL("../dist/assets/home.css", import.meta.url), "utf8");
+  const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
+  assert.match(styles, /--accent: #003c71/u);
+  assert.match(styles, /font-family: "Space Grotesk", "Segoe UI", sans-serif/u);
+  assert.match(styles, /h1, h2 \{[^}]*font-family: "Sora", "Space Grotesk", sans-serif/u);
+  assert.match(support, /Space Grotesk and Sora/u);
+  assert.doesNotMatch(support, /Source Serif 4/u);
 });
 
 test("privacy page includes concise terms of service", async () => {
