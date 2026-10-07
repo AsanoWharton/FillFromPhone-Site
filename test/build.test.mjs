@@ -97,6 +97,14 @@ test("site chrome keeps only the wordmark, support, privacy, and terms", async (
   }
 });
 
+test("support is presented as a regular navigation link", async () => {
+  const styles = await readFile(new URL("../dist/assets/header.css", import.meta.url), "utf8");
+  const supportRule = styles.match(/\.site-support \{([^}]*)\}/u)?.[1] ?? "";
+  assert.doesNotMatch(supportRule, /border|background|min-height/u);
+  assert.match(styles, /\.site-support:hover, \.site-support\[aria-current="page"\] \{[^}]*text-decoration: underline/u);
+  assert.match(styles, /\.site-wordmark:focus-visible, \.site-support:focus-visible \{[^}]*outline: 4px solid var\(--focus\)/u);
+});
+
 test("privacy page includes concise terms of service", async () => {
   const privacy = await readFile(new URL("../dist/privacy/index.html", import.meta.url), "utf8");
   assert.match(privacy, /id="terms"/u);

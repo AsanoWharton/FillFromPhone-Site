@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.15 — 2026-10-07
+
+- Restyled Support as a regular navigation link instead of a bordered control.
+- Retained visible hover, current-page, and keyboard-focus states.
+
 ## 0.9.14 — 2026-10-07
 
 - Restricted unauthorized reverse engineering, decompilation, disassembly, derivative works, reproduction, and commercialization.
