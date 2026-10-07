@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.21 — 2026-10-07
+
+- Tightened homepage type, spacing, actions, and section rhythm below 700 pixels without changing the desktop layout.
+- Separated the transfer steps into distinct mobile cards and intrinsically sized the supporting illustration.
+
 ## 0.9.20 — 2026-10-07
 
 - Removed the repeated benefit strip, duplicated walkthrough artwork, and second release call to action.

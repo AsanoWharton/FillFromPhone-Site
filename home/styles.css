@@ -137,15 +137,33 @@ th { background: #e7e3da; color: var(--ink); }
 tbody tr:nth-child(even) { background: var(--surface); }
 
 @media (max-width: 700px) {
-  .marketing-hero, .release-bar, .story-intro, .process-layout, .use-cases, .partner-panel, .privacy-panel, .steps, .split, .boundary { display: block; }
-  .marketing-hero { min-height: 0; padding-top: 3.5rem; }
-  .hero-visual { width: 125%; margin: 1rem -17% -1rem -8%; }
-  .release-actions { justify-content: flex-start; margin-top: 1rem; }
-  .story-intro > p:last-child { margin-top: 1.25rem; }
-  .process-visual { min-height: 20rem; margin-top: 1rem; }
-  .use-case-list { margin-top: 2rem; }
-  .partner-panel > div:last-child { margin-top: 2rem; }
-  .simple-facts { margin-top: 2.5rem; }
+  .marketing-hero, .release-bar, .story-intro, .process-layout, .use-cases, .partner-panel, .privacy-panel, .split, .boundary { display: block; }
+  .hero { padding-block: 2.75rem 3rem; }
+  .marketing-hero { min-height: 0; }
+  .marketing-hero h1 { max-width: 13ch; margin-block: .45rem 1rem; font-size: 2.55rem; line-height: 1.02; }
+  .lede { font-size: 1rem; line-height: 1.55; }
+  .actions, .release-actions { display: grid; grid-template-columns: 1fr; gap: .6rem; inline-size: min(100%, 28rem); }
+  .actions { margin-top: 1.5rem; }
+  .actions a, .release-actions a { width: 100%; min-height: 3rem; text-align: center; }
+  .hero-visual { width: 112%; margin: 1rem -8% -1.25rem -4%; }
+  .release-bar { padding-block: 2rem; }
+  .release-bar h2 { font-size: 1.35rem; }
+  .release-actions { margin-top: 1.25rem; }
+  .section { padding-block: 3rem; }
+  .section h2 { margin-block: .3rem 1.25rem; font-size: 1.8rem; line-height: 1.08; }
+  .story-intro { margin-bottom: 1.5rem; }
+  .story-intro > p:last-child { margin-top: 0; font-size: 1rem; }
+  .steps { gap: .75rem; }
+  .steps li { gap: .75rem; padding: 1rem; }
+  .process-visual { min-height: 0; max-width: 30rem; aspect-ratio: 1222 / 1287; margin: 1rem auto 0; }
+  .use-cases > div:last-child { margin-top: 1.25rem; }
+  .use-case-copy, .partner-panel > div:last-child > p:not(.text-links), .privacy-panel > div > p:not(.section-label, .text-links) { font-size: 1rem; }
+  .use-case-list { margin-top: 1.25rem; }
+  .partner-panel > div:last-child { margin-top: 1.5rem; }
+  .text-links { display: grid; gap: .5rem; margin-top: 1.25rem; }
+  .simple-facts { margin-top: 2rem; }
+  .simple-facts div { padding-block: 1rem; }
+  .simple-facts dt { font-size: 1.55rem; }
   .facts { margin-top: 2rem; }
   .support-steps { grid-template-columns: 1fr; }
   .footer-copy { display: grid; gap: .1rem; }
