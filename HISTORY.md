@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.14 — 2026-10-07
+
+- Restricted unauthorized reverse engineering, decompilation, disassembly, derivative works, reproduction, and commercialization.
+- Preserved rights that applicable law does not permit the terms to waive.
+
 ## 0.9.13 — 2026-10-07
 
 - Centered the legal footer and improved its narrow-screen line breaks.

@@ -101,4 +101,6 @@ test("privacy page includes concise terms of service", async () => {
   const privacy = await readFile(new URL("../dist/privacy/index.html", import.meta.url), "utf8");
   assert.match(privacy, /id="terms"/u);
   assert.match(privacy, /Use only what you are authorized to transfer/u);
+  assert.match(privacy, /you may not reverse engineer, decompile, disassemble/u);
+  assert.match(privacy, /rights that cannot lawfully be waived, including qualifying interoperability activity/u);
 });
