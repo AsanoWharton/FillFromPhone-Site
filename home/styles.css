@@ -108,13 +108,21 @@ h1, h2 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; }
 .boundary { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: clamp(2rem, 7vw, 6rem); }
 .boundary .section-label { grid-column: 1 / -1; }
 code { padding: .1em .3em; border-radius: .15rem; background: var(--surface); font-size: .9em; }
-footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem 0 3rem; color: var(--muted); font-size: .82rem; }
+footer { display: flex; justify-content: space-between; gap: 1rem 2rem; padding: 2rem 0 3rem; color: var(--muted); font-size: .82rem; }
+footer p { margin: 0; }
+footer nav { display: flex; flex: 0 0 auto; gap: 1rem; }
 .document { max-width: 70rem; }
 .document-header { max-width: 55rem; padding: clamp(3.5rem, 8vw, 7rem) 0 3rem; }
 .document-header h1 { margin: .5rem 0 1.25rem; color: var(--ink); font-size: clamp(2.6rem, 6vw, 5.1rem); line-height: 1.02; letter-spacing: -.03em; }
 .revision { margin-top: 1.5rem; color: var(--muted); font-size: .85rem; }
 .technical-list { max-width: 55rem; margin: 0; padding-left: 1.4rem; }
 .technical-list li + li { margin-top: 1rem; }
+.support-steps { display: grid; max-width: 55rem; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin: 0 0 1rem; padding: 0; counter-reset: support-step; list-style: none; }
+.support-steps li { padding: 1rem; border: 1px solid var(--line); border-radius: .4rem; background: var(--surface); counter-increment: support-step; }
+.support-steps strong { display: block; margin-bottom: .35rem; color: var(--ink); }
+.support-steps strong::before { display: inline-grid; width: 1.45rem; height: 1.45rem; margin-right: .45rem; place-items: center; border-radius: 50%; background: var(--accent); color: var(--white); content: counter(support-step); font-family: "Public Sans", sans-serif; font-size: .75rem; }
+.support-steps span, .support-note { color: var(--muted); }
+.support-note { max-width: 55rem; margin-bottom: 1.5rem; }
 .faq-list { max-width: 55rem; margin: 0; border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
 .faq-list summary { padding: 1rem .35rem; color: var(--ink); cursor: pointer; font-weight: 700; }
@@ -132,6 +140,7 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem
 .topic-nav { display: flex; flex-wrap: wrap; gap: .55rem; padding: 0 0 2rem; border-bottom: 1px solid var(--line); }
 .topic-nav a { padding: .45rem .7rem; border: 1px solid var(--line); border-radius: 999px; background: var(--white); text-decoration: none; font-size: .9rem; font-weight: 700; }
 .topic-nav a:hover { border-color: var(--accent); background: var(--accent-soft); }
+.anchor-target { display: block; scroll-margin-top: 1rem; }
 .table-wrap { max-width: 100%; overflow-x: auto; }
 caption { padding: 0 0 .75rem; color: var(--muted); text-align: left; font-weight: 700; }
 .measure { max-width: 55rem; color: var(--muted); }
@@ -157,8 +166,9 @@ tbody tr:nth-child(even) { background: var(--surface); }
   .simple-facts { margin-top: 2.5rem; }
   .steps li { margin-top: 1rem; }
   .facts { margin-top: 2rem; }
-  footer { display: block; }
-  footer span { display: block; margin-top: .3rem; }
+  .support-steps { grid-template-columns: 1fr; }
+  footer { display: block; text-align: center; }
+  footer nav { justify-content: center; margin-top: .5rem; }
   .table-wrap { margin-inline: -1rem; padding-inline: 1rem; }
 }
 

@@ -58,6 +58,9 @@ input:focus, textarea:focus, button:focus-visible, summary:focus-visible { outli
 .tooltip strong { margin-bottom: .2rem; color: var(--ink); }
 .safety-note { margin: 1.2rem 0 0; padding: .75rem .85rem; border-left: .25rem solid var(--accent); background: var(--accent-light); font-size: .78rem; }
 footer { width: min(100% - 2rem, 34rem); margin-inline: auto; padding: 0 0 max(1.25rem, env(safe-area-inset-bottom)); color: var(--muted); font-size: .7rem; text-align: center; }
+footer p { margin: 0; }
+footer nav { display: flex; justify-content: center; gap: 1rem; margin-top: .35rem; }
+footer a { color: var(--accent-dark); text-underline-offset: .15em; }
 
 @media (max-width: 520px) {
   .page-shell { align-items: start; padding-top: 1rem; }

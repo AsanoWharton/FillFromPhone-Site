@@ -60,10 +60,8 @@ test("home and missing-extension states point to the current GitHub release", as
   assert.match(script, /Extension not detected/u);
 });
 
-test("current product pages use direct licensing language", async () => {
-  const home = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
+test("support uses direct licensing language", async () => {
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
-  assert.match(home, /Commercial licensing available/u);
   assert.match(support, /Commercial evaluation, integration, and licensing are available only by written agreement/u);
 });
 
@@ -71,9 +69,9 @@ test("support consolidates process, security, cryptography, limits, and notices"
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
   assert.match(support, /<title>Support and technical FAQ · Fill from Phone<\/title>/u);
   assert.match(support, /mailto:contact@asanowharton\.com/u);
-  assert.equal((support.match(/<details name="(?:using|process|security|crypto|limits)-faq">/gu) ?? []).length, 23);
-  assert.equal((support.match(/<details name="(?:using|process|security|crypto|limits)-faq"><summary>/gu) ?? []).length, 23);
-  for (const anchor of ["using", "process", "security", "cryptography", "limitations", "notices", "contact"]) {
+  assert.equal((support.match(/<details name="support-faq">/gu) ?? []).length, 9);
+  assert.equal((support.match(/<details name="support-faq"><summary>/gu) ?? []).length, 9);
+  for (const anchor of ["using", "troubleshooting", "process", "security", "cryptography", "limitations", "notices", "contact"]) {
     assert.match(support, new RegExp(`id="${anchor}"`, "u"));
   }
   assert.match(support, /P-256 ECDH/u);
@@ -87,13 +85,20 @@ test("support consolidates process, security, cryptography, limits, and notices"
   assert.match(securityPolicy, /^Contact: mailto:contact@asanowharton\.com$/mu);
 });
 
-test("public navigation exposes only home, support, and privacy", async () => {
+test("site chrome keeps only the wordmark, support, privacy, and terms", async () => {
   for (const page of ["index.html", "privacy/index.html", "support/index.html", "test/index.html"]) {
     const body = await readFile(new URL(`../dist/${page}`, import.meta.url), "utf8");
     const navigation = body.match(/<nav aria-label="Primary">([\s\S]*?)<\/nav>/u)?.[1] ?? "";
-    assert.match(navigation, /href="\/"/u);
+    assert.match(body, /class="site-wordmark" href="\/"/u);
     assert.match(navigation, /href="\/support"/u);
-    assert.match(navigation, /href="\/privacy"/u);
-    assert.doesNotMatch(navigation, /href="\/(?:security|cryptography|licenses|test)"/u);
+    assert.equal((navigation.match(/<a /gu) ?? []).length, 1);
+    assert.match(body, /<nav aria-label="Legal"><a href="\/privacy">Privacy<\/a><a href="\/privacy#terms">Terms of Service<\/a><\/nav>/u);
+    assert.match(body, /&copy; 2026 FillFromPhone\.com\. Powered by <a href="https:\/\/asanowharton\.com">Asano Wharton, LLC<\/a>\. All rights reserved\./u);
   }
+});
+
+test("privacy page includes concise terms of service", async () => {
+  const privacy = await readFile(new URL("../dist/privacy/index.html", import.meta.url), "utf8");
+  assert.match(privacy, /id="terms"/u);
+  assert.match(privacy, /Use only what you are authorized to transfer/u);
 });
