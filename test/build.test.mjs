@@ -62,7 +62,10 @@ test("home and missing-extension states point to the current GitHub release", as
   assert.match(home, /Choose\. Scan\. Send\./u);
   assert.equal((home.match(/\/assets\/transfer-hero\.png\?v=48fb6005/gu) ?? []).length, 1);
   assert.equal((home.match(/class="availability-badge"/gu) ?? []).length, 1);
-  assert.doesNotMatch(home, /benefit-strip|closing-cta/u);
+  assert.equal((home.match(/class="closing-cta"/gu) ?? []).length, 1);
+  assert.match(home, /Keep the vault on your phone\./u);
+  assert.match(home, />Get the extension<\/a>/u);
+  assert.doesNotMatch(home, /benefit-strip/u);
   assert.match(home, download);
   assert.match(example, /id="extension-install"[^>]+hidden/u);
   assert.match(example, download);

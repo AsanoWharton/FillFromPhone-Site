@@ -1,5 +1,10 @@
 # Public history
 
+## 0.9.22 — 2026-10-07
+
+- Added one concise closing call to action after the security section on mobile and desktop.
+- Kept the panel responsive and linked directly to the current extension package and support.
+
 ## 0.9.21 — 2026-10-07
 
 - Tightened homepage type, spacing, actions, and section rhythm below 700 pixels without changing the desktop layout.
