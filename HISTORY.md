@@ -1,5 +1,10 @@
 # Public history
 
+## 0.10.2 — 2026-10-08
+
+- Emitted the vulnerability-disclosure policy at its advertised `/.well-known/security.txt` canonical path as well as the compatibility root path.
+- Added a regression test proving both static artifacts are present and byte-identical.
+
 ## 0.10.1 — 2026-10-07
 
 - Synchronized the reviewed Home, Support, and Privacy pages with the 0.10.1 product release.
