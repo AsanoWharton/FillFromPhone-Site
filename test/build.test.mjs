@@ -15,9 +15,18 @@ test("static build contains every public page and required local asset", async (
     "../dist/assets/space-grotesk-500.woff2",
     "../dist/assets/space-grotesk-700.woff2",
     "../dist/assets/sora-700.woff2",
-    "../dist/favicon.png"
+    "../dist/favicon.png",
+    "../dist/security.txt",
+    "../dist/.well-known/security.txt"
   ];
   await Promise.all(paths.map((path) => access(new URL(path, import.meta.url))));
+});
+
+test("security policy is emitted at its advertised canonical path", async () => {
+  const rootPolicy = await readFile(new URL("../dist/security.txt", import.meta.url), "utf8");
+  const canonicalPolicy = await readFile(new URL("../dist/.well-known/security.txt", import.meta.url), "utf8");
+  assert.equal(canonicalPolicy, rootPolicy);
+  assert.match(canonicalPolicy, /^Canonical: https:\/\/fillfromphone\.com\/\.well-known\/security\.txt$/mu);
 });
 
 test("public pages do not disclose deployment topology", async () => {

@@ -11,6 +11,7 @@ function icon(definition) {
 const output = new URL("./dist/", import.meta.url);
 await rm(output, { recursive: true, force: true });
 await mkdir(new URL("./assets/", output), { recursive: true });
+await mkdir(new URL("./.well-known/", output), { recursive: true });
 
 for (const page of ["privacy", "support", "test"]) {
   await mkdir(new URL(`./${page}/`, output), { recursive: true });
@@ -26,6 +27,7 @@ await Promise.all([
   copyFile(new URL("./test/styles.css", import.meta.url), new URL("./assets/test.css", output)),
   copyFile(new URL("./src/favicon.png", import.meta.url), new URL("./favicon.png", output)),
   copyFile(new URL("./security.txt", import.meta.url), new URL("./security.txt", output)),
+  copyFile(new URL("./security.txt", import.meta.url), new URL("./.well-known/security.txt", output)),
   cp(new URL("./home/assets/", import.meta.url), new URL("./assets/", output), { recursive: true }),
   cp(new URL("./third-party/licenses/", import.meta.url), new URL("./licenses/", output), { recursive: true }),
   copyFile(new URL("./node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2", import.meta.url), new URL("./assets/space-grotesk-400.woff2", output)),
