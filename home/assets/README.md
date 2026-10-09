@@ -1,6 +1,6 @@
 # Homepage interaction assets
 
-These PNG files were generated specifically for the Fill from Phone homepage with OpenAI's built-in image-generation tool on 2026-10-06. They are stored in the repository, served from the same origin, contain an alpha channel, and make no network request to an image provider at runtime. They contain no product logo, third-party trademark, or readable generated text.
+These PNG files were generated specifically for the Remote Fill homepage with OpenAI's built-in image-generation tool on 2026-10-06. They are stored in the repository, served from the same origin, contain an alpha channel, and make no network request to an image provider at runtime. They contain no product logo, third-party trademark, or readable generated text.
 
 | File | Purpose | SHA-256 |
 | --- | --- | --- |

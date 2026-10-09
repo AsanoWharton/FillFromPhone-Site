@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Practical help, transfer details, security boundaries, and third-party notices for Fill from Phone."><title>Support and technical FAQ · Fill from Phone</title><link rel="icon" type="image/png" sizes="128x128" href="/favicon.png"><link rel="stylesheet" href="/assets/header.css"><link rel="stylesheet" href="/assets/home.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Practical help, transfer details, security boundaries, and third-party notices for Remote Fill."><title>Support and technical FAQ · Remote Fill</title><link rel="icon" type="image/png" sizes="128x128" href="/favicon.png"><link rel="stylesheet" href="/assets/header.css"><link rel="stylesheet" href="/assets/home.css"></head>
 <body>
-  <header class="site-header"><a class="site-wordmark" href="/" aria-label="Fill from Phone home">Fill from Phone</a><nav aria-label="Primary"><a class="site-support" aria-current="page" href="/support">Support</a></nav></header>
+  <header class="site-header"><a class="site-wordmark" href="/" aria-label="Remote Fill home">Remote Fill</a><nav aria-label="Primary"><a class="site-support" aria-current="page" href="/support">Support</a></nav></header>
   <main class="document">
     <header class="document-header"><p class="eyebrow">Support</p><h1>Start here. Open details only when you need them.</h1><p class="lede">A short path through setup, troubleshooting, and the security model.</p><p class="revision">Updated 2026-10-07 · Protocol version 5</p></header>
 
@@ -12,14 +12,14 @@
       <p class="section-label">Quick start</p>
       <h2>Move one value in three steps</h2>
       <ol class="support-steps">
-        <li><strong>Choose the field.</strong><span>Right-click the exact editable field and choose <b>Fill from Phone</b>.</span></li>
+        <li><strong>Choose the field.</strong><span>Right-click the exact editable field and choose <b>Remote Fill</b>.</span></li>
         <li><strong>Scan once.</strong><span>Open the one-time QR with your phone camera.</span></li>
         <li><strong>Send one value.</strong><span>Enter or paste it on the phone, send it, then review the filled field.</span></li>
       </ol>
       <p class="support-note">No account or phone app is required. The extension does not use the clipboard or submit the destination form. Without the extension, use <a href="/receive">secure web copy and paste</a>; it decrypts locally, then you copy the value into the destination yourself.</p>
       <div class="faq-list">
         <details name="support-faq"><summary>What can I transfer?</summary><div class="faq-answer"><p>One short-text, long-text, or password value. Supported targets include text, email, password, search, telephone, URL, textarea, and editable-content fields. The phone presents the matching input type, including a masked password control.</p></div></details>
-        <details name="support-faq"><summary>How does web copy and paste differ from the extension?</summary><div class="faq-answer"><p>The <a href="/receive">web receiver</a> uses the same one-time encrypted handoff, but browser isolation prevents it from filling a field on another website. It reveals nothing by default. You explicitly copy the received value, its mutable application buffer is immediately overwritten, and you paste it into the destination.</p><p>The browser and operating system control the clipboard, so Fill from Phone cannot prove or force clipboard erasure. Use the extension when avoiding the clipboard is more important.</p></div></details>
+        <details name="support-faq"><summary>How does web copy and paste differ from the extension?</summary><div class="faq-answer"><p>The <a href="/receive">web receiver</a> uses the same one-time encrypted handoff, but browser isolation prevents it from filling a field on another website. It reveals nothing by default. You explicitly copy the received value, its mutable application buffer is immediately overwritten, and you paste it into the destination.</p><p>The browser and operating system control the clipboard, so Remote Fill cannot prove or force clipboard erasure. Use the extension when avoiding the clipboard is more important.</p></div></details>
       </div>
     </section>
 
@@ -37,7 +37,7 @@
       <h2>One encrypted handoff, then expiry</h2>
       <div class="faq-list">
         <details name="support-faq"><summary>How does the value move from phone to field?</summary><div class="faq-answer"><ol><li>The extension creates an ephemeral P-256 key and independent one-time route, read, write, and challenge values.</li><li>The QR carries public bootstrap data in its URL fragment, which browsers do not send in HTTP requests.</li><li>The phone claims the transfer, derives the content key, and encrypts the value before upload.</li><li>The relay delivers one opaque envelope. The extension authenticates the original route, origin, field type, and expiry before decrypting and inserting the value.</li></ol><p>The relay reservation excludes the destination origin and field classification. The destination page sees the value only after the extension inserts it.</p></div></details>
-        <details name="support-faq"><summary>Can the QR be reused, and what remains after Send?</summary><div class="faq-answer"><p>No. The first valid scanner claims the transfer, later claims fail, and the QR disappears from the desktop. The phone clears its visible control after encryption; the relay removes the envelope after delivery or expiry and retains only a short-lived consumed marker to reject replay. All active state expires within two minutes, and Fill from Phone creates no account or recoverable transfer history.</p><p>A captured QR can still race the intended phone for the first claim. First claim prevents a second delivery; it does not prove the scanner's identity.</p></div></details>
+        <details name="support-faq"><summary>Can the QR be reused, and what remains after Send?</summary><div class="faq-answer"><p>No. The first valid scanner claims the transfer, later claims fail, and the QR disappears from the desktop. The phone clears its visible control after encryption; the relay removes the envelope after delivery or expiry and retains only a short-lived consumed marker to reject replay. All active state expires within two minutes, and Remote Fill creates no account or recoverable transfer history.</p><p>A captured QR can still race the intended phone for the first claim. First claim prevents a second delivery; it does not prove the scanner's identity.</p></div></details>
       </div>
     </section>
 
@@ -56,9 +56,9 @@
     <section class="section" id="notices">
       <p class="section-label">Licensing</p>
       <h2>Product and third-party notices</h2>
-      <p class="measure">Fill from Phone application code, protocol implementation, documentation, visual assets, and trademarks remain proprietary. Commercial evaluation, integration, and licensing are available only by written agreement.</p>
+      <p class="measure">Remote Fill application code, protocol implementation, documentation, visual assets, and trademarks remain proprietary. Commercial evaluation, integration, and licensing are available only by written agreement.</p>
       <div class="faq-list">
-        <details name="support-faq"><summary>View third-party components and license texts</summary><div class="faq-answer"><p>The licenses below apply only to their named materials and do not license Fill from Phone itself.</p><div class="table-wrap"><table><caption>Third-party notices</caption><thead><tr><th scope="col">Component</th><th scope="col">Use</th><th scope="col">License</th></tr></thead><tbody>
+        <details name="support-faq"><summary>View third-party components and license texts</summary><div class="faq-answer"><p>The licenses below apply only to their named materials and do not license Remote Fill itself.</p><div class="table-wrap"><table><caption>Third-party notices</caption><thead><tr><th scope="col">Component</th><th scope="col">Use</th><th scope="col">License</th></tr></thead><tbody>
           <tr><td>Space Grotesk and Sora</td><td>Website interface and display fonts</td><td><a href="/licenses/space-grotesk-ofl-1.1.txt">SIL OFL 1.1</a> and <a href="/licenses/sora-ofl-1.1.txt">SIL OFL 1.1</a></td></tr>
           <tr><td>Public Sans</td><td>Packaged extension interface font</td><td><a href="/licenses/public-sans-ofl-1.1.txt">SIL OFL 1.1</a></td></tr>
           <tr><td>node-qrcode and dijkstrajs</td><td>Packaged QR encoding</td><td><a href="/licenses/qrcode-mit.txt">MIT</a> and <a href="/licenses/dijkstrajs-mit.txt">MIT</a></td></tr>
@@ -70,6 +70,6 @@
 
     <section class="section callout" id="contact"><p class="section-label">Contact</p><h2>Still need help?</h2><p>Email <a href="mailto:contact@asanowharton.com">contact@asanowharton.com</a> for support, privacy, commercial, or security questions. For a suspected vulnerability, also see <a href="/.well-known/security.txt">security.txt</a>.</p><p>Use synthetic values. Never send passwords, private keys, complete QR contents, capability tokens, or encrypted envelopes.</p></section>
   </main>
-  <footer><p class="footer-copy"><span>&copy; 2026 <a href="https://fillfromphone.com">FillFromPhone.com</a>.</span><span>Powered by <a href="https://asanowharton.com">Asano Wharton, LLC</a>.</span><span>All rights reserved.</span></p><nav aria-label="Legal"><a href="/privacy">Privacy</a><a href="/privacy#terms">Terms of Service</a></nav></footer>
+  <footer><p class="footer-copy"><span>&copy; 2026 <a href="https://fillfromphone.com">Remote Fill</a>.</span><span>Powered by <a href="https://asanowharton.com">Asano Wharton, LLC</a>.</span><span>All rights reserved.</span></p><nav aria-label="Legal"><a href="/privacy">Privacy</a><a href="/privacy#terms">Terms of Service</a></nav></footer>
 </body>
 </html>

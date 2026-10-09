@@ -61,20 +61,20 @@ test("test steps reserve room for their labels before wrapping", async () => {
   assert.match(styles, /\.quick-steps li \{[^}]*min-inline-size: 0/u);
 });
 
-test("home and missing-extension states point to the current GitHub release", async () => {
+test("home and missing-extension states point to the published Chrome listing", async () => {
   const home = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
   const example = await readFile(new URL("../dist/test/index.html", import.meta.url), "utf8");
   const script = await readFile(new URL("../dist/assets/test.js", import.meta.url), "utf8");
-  const download = /https:\/\/github\.com\/AsanoWharton\/FillFromPhone-Extension\/releases\/latest\/download\/fill-from-phone-0\.6\.2-chrome-web-store\.zip/u;
+  const download = /https:\/\/chromewebstore\.google\.com\/detail\/npnlkifegebcabfbllgokeocadbeegbf/u;
   assert.match(home, /Extend one key, not the keyring\./u);
-  assert.match(home, /Chrome Web Store · Coming soon/u);
+  assert.match(home, /Available in the Chrome Web Store/u);
   assert.match(home, /Choose\. Scan\. Send\./u);
   assert.equal((home.match(/\/assets\/transfer-hero\.png\?v=48fb6005/gu) ?? []).length, 1);
   assert.equal((home.match(/class="availability-badge"/gu) ?? []).length, 1);
   assert.equal((home.match(/class="closing-cta"/gu) ?? []).length, 1);
   assert.match(home, /Keep the vault on your phone\./u);
-  assert.equal((home.match(/>Download Chrome <span class="file-badge" aria-hidden="true">ZIP<\/span><span class="visually-hidden"> ZIP file<\/span><\/a>/gu) ?? []).length, 2);
-  assert.match(example, /Download Chrome <span class="file-badge" aria-hidden="true">ZIP<\/span><span class="visually-hidden"> ZIP file<\/span>/u);
+  assert.equal((home.match(/>Add to Chrome<\/a>/gu) ?? []).length, 2);
+  assert.match(example, />Add to Chrome<\/a>/u);
   assert.doesNotMatch(home, /benefit-strip/u);
   assert.match(home, download);
   assert.match(example, /id="extension-install"[^>]+hidden/u);
@@ -90,7 +90,7 @@ test("support uses direct licensing language", async () => {
 
 test("support consolidates process, security, cryptography, limits, and notices", async () => {
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
-  assert.match(support, /<title>Support and technical FAQ · Fill from Phone<\/title>/u);
+  assert.match(support, /<title>Support and technical FAQ · Remote Fill<\/title>/u);
   assert.match(support, /mailto:contact@asanowharton\.com/u);
   assert.equal((support.match(/<details name="support-faq">/gu) ?? []).length, 10);
   assert.equal((support.match(/<details name="support-faq"><summary>/gu) ?? []).length, 10);
@@ -116,7 +116,7 @@ test("site chrome keeps only the wordmark, support, privacy, and terms", async (
     assert.match(navigation, /href="\/support"/u);
     assert.equal((navigation.match(/<a /gu) ?? []).length, 1);
     assert.match(body, /<nav aria-label="Legal"><a href="\/privacy">Privacy<\/a><a href="\/privacy#terms">Terms of Service<\/a><\/nav>/u);
-    assert.match(body, /<p class="footer-copy"><span>&copy; 2026 <a href="https:\/\/fillfromphone\.com">FillFromPhone\.com<\/a>\.<\/span><span>Powered by <a href="https:\/\/asanowharton\.com">Asano Wharton, LLC<\/a>\.<\/span><span>All rights reserved\.<\/span><\/p>/u);
+    assert.match(body, /<p class="footer-copy"><span>&copy; 2026 <a href="https:\/\/fillfromphone\.com">Remote Fill<\/a>\.<\/span><span>Powered by <a href="https:\/\/asanowharton\.com">Asano Wharton, LLC<\/a>\.<\/span><span>All rights reserved\.<\/span><\/p>/u);
   }
 });
 
@@ -129,7 +129,7 @@ test("support is presented as a regular navigation link", async () => {
   assert.match(styles, /\.site-wordmark:focus-visible, \.site-support:focus-visible \{[^}]*outline: 4px solid var\(--focus\)/u);
 });
 
-test("site uses Asano Wharton typography with the Fill from Phone green palette", async () => {
+test("site uses Asano Wharton typography with the Remote Fill green palette", async () => {
   const styles = await readFile(new URL("../dist/assets/home.css", import.meta.url), "utf8");
   const support = await readFile(new URL("../dist/support/index.html", import.meta.url), "utf8");
   assert.match(styles, /--accent: #146c68/u);

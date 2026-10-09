@@ -1,8 +1,8 @@
-# Fill from Phone Site
+# Remote Fill Site
 
-This repository contains the public Home, Support, and Privacy pages plus the unlinked extension test utility for Fill from Phone. Support consolidates the product process, security model, cryptographic profile, limitations, and third-party notices. The tokenized Transfer page is implemented in `FillFromPhone-Core`.
+This repository contains the public Home, Support, and Privacy pages plus the unlinked extension test utility for Remote Fill. Support consolidates the product process, security model, cryptographic profile, limitations, and third-party notices. The tokenized Transfer page is implemented in `RemoteFill-Core`.
 
-It is intentionally not the central technical repository. The relay, phone data-entry endpoint, protocol, and security-critical tests are in `FillFromPhone-Core`; the Chrome receiver is in `FillFromPhone-Extension`. This repository contains no relay state machine, production configuration, deployment topology, or credentials.
+It is intentionally not the central technical repository. The relay, phone data-entry endpoint, protocol, and security-critical tests are in `RemoteFill-Core`; the Chrome receiver is in `RemoteFill-Extension`. This repository contains no relay state machine, production configuration, deployment topology, or credentials.
 
 ## Verify locally
 
