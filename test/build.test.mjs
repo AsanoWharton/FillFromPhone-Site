@@ -26,7 +26,7 @@ test("security policy is emitted at its advertised canonical path", async () => 
   const rootPolicy = await readFile(new URL("../dist/security.txt", import.meta.url), "utf8");
   const canonicalPolicy = await readFile(new URL("../dist/.well-known/security.txt", import.meta.url), "utf8");
   assert.equal(canonicalPolicy, rootPolicy);
-  assert.match(canonicalPolicy, /^Canonical: https:\/\/fillfromphone\.com\/\.well-known\/security\.txt$/mu);
+  assert.match(canonicalPolicy, /^Canonical: https:\/\/remotefill\.com\/\.well-known\/security\.txt$/mu);
 });
 
 test("public pages do not disclose deployment topology", async () => {
@@ -116,7 +116,7 @@ test("site chrome keeps only the wordmark, support, privacy, and terms", async (
     assert.match(navigation, /href="\/support"/u);
     assert.equal((navigation.match(/<a /gu) ?? []).length, 1);
     assert.match(body, /<nav aria-label="Legal"><a href="\/privacy">Privacy<\/a><a href="\/privacy#terms">Terms of Service<\/a><\/nav>/u);
-    assert.match(body, /<p class="footer-copy"><span>&copy; 2026 <a href="https:\/\/fillfromphone\.com">Remote Fill<\/a>\.<\/span><span>Powered by <a href="https:\/\/asanowharton\.com">Asano Wharton, LLC<\/a>\.<\/span><span>All rights reserved\.<\/span><\/p>/u);
+    assert.match(body, /<p class="footer-copy"><span>&copy; 2026 <a href="https:\/\/remotefill\.com">Remote Fill<\/a>\.<\/span><span>Powered by <a href="https:\/\/asanowharton\.com">Asano Wharton, LLC<\/a>\.<\/span><span>All rights reserved\.<\/span><\/p>/u);
   }
 });
 
